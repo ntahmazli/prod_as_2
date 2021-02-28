@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Add Course</title>
+
+    <style>
+
+            .button {
+              background-color: #32a8a2;
+              border: none;
+              color: white;
+              padding: 10px 30px;
+              text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          margin: 4px 2px;
+          cursor: pointer;
+          font-family: arial;
+            font-size: 15px;
+            }
+
+            #home {
+          background-color: #4CAF50;
+          border: none;
+          color: white;
+          padding: 10px 30px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          margin: 4px 2px;
+          cursor: pointer;
+          font-family: arial;
+            font-size: 15px;
+        }
+
+            a:link, a:visited {
+                background-color: white;
+                color: black;
+                border: 2px solid green;
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+            }
+
+            a:hover, a:active {
+                background-color: green;
+                color: white;
+            }
+
+           body {
+            font-family: arial;
+            font-size: 15px;
+
+        }
+        .error{
+
+            color: red;
+
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+
+    <center>
+        <h1>Add New Course</h1>
+        <br>
+        <form name="courseForm" action="#" th:action="@{/app/saveCourse}" th:object="${course}" method="POST" onsubmit="return validateForm()">
+            <div th:if="${#fields.hasErrors('*')}">
+                <p class="error">Please Correct Errors Below</p>
+            </div>
+
+            Course ID: <input type="text" th:field="*{courseId}"/><br><br>
+            <span class="error" th:if="${#fields.hasErrors('courseId')}">
+
+                    <p class="error" th:each="err : ${#fields.errors('courseId')}" th:text="${err}"/>
+
+            </span>
+            Course Name: <input type="text" th:field="*{courseName}"/><br><br>
+            <span class="error" th:if="${#fields.hasErrors('courseName')}">
+
+                    <p class="error" th:each="err : ${#fields.errors('courseName')}" th:text="${err}"/>
+
+            </span>
+            <input type="submit" value="Save" class="button"/>
+        </form>
+
+        <p><b><a href="/app/course"> Go Back to Course Information Page </a></b></p>
+
+        <form action = "/" method = "GET">
+            <p><b><input type = "submit" value = "Go Back to Home Page" name = "submit" id="home"/></b></p>
+        </form>
+    </center>
+
+</body>
+</html>

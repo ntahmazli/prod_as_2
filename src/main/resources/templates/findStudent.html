@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Search</title>
+    <style>
+
+        .button {
+          background-color: #8c32a8;
+          border: none;
+          color: white;
+          padding: 5px 15px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          margin: 4px 2px;
+          cursor: pointer;
+          font-family: arial;
+            font-size: 15px;
+        }
+
+          a:link, a:visited {
+           background-color: white;
+            color: black;
+            border: 2px solid green;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        a:hover, a:active {
+            background-color: green;
+            color: white;
+        }
+
+        body {
+            font-family: arial;
+            font-size: 15px;
+
+        }
+
+        #home {
+          background-color: #4CAF50;
+          border: none;
+          color: white;
+          padding: 10px 30px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          margin: 4px 2px;
+          cursor: pointer;
+          font-family: arial;
+            font-size: 15px;
+        }
+
+</style>
+</head>
+<body>
+
+    <center>
+        <h1>Search for Student Information</h1>
+
+        <form action="/app/findById" method="GET">
+            Find Student by ID <input type="text" name="id"/> &nbsp;
+            <input type="submit" value="Find" class="button">
+        </form>
+
+        <form action="/app/findByName" method="GET">
+            Find Student by Name <input type="text" name="stName"/> &nbsp;
+            <input type="submit" value="Find" class="button">
+        </form>
+
+        <form action="/app/findBySurname" method="GET">
+            Find Student by Surname <input type="text" name="stSurname"/> &nbsp;
+            <input type="submit" value="Find" class="button">
+        </form>
+
+        <form action="/app/findByMajor" method="GET">
+            Find Student by Major <input type="text" name="major"/> &nbsp;
+            <input type="submit" value="Find" class="button">
+        </form>
+
+
+        <p><b><a href="/app/student"> Go Back to Student Information Page </a></b></p>
+
+        <form action = "/" method = "GET">
+            <p><b><input type = "submit" value = "Go Back to Home Page" name = "submit" id="home"/></b></p>
+        </form>
+    </center>
+
+</body>
+</html>

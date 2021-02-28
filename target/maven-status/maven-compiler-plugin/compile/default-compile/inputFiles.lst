@@ -1,0 +1,12 @@
+/Users/nargiz/Desktop/CRUD/src/main/java/ada/wm2/CRUD/controller/StudentController.java
+/Users/nargiz/Desktop/CRUD/src/main/java/ada/wm2/CRUD/CrudApplication.java
+/Users/nargiz/Desktop/CRUD/src/main/java/ada/wm2/CRUD/exception/StudentException.java
+/Users/nargiz/Desktop/CRUD/src/main/java/ada/wm2/CRUD/config/VariablesConfig.java
+/Users/nargiz/Desktop/CRUD/src/main/java/ada/wm2/CRUD/repository/StudentRepository.java
+/Users/nargiz/Desktop/CRUD/src/main/java/ada/wm2/CRUD/controller/CourseController.java
+/Users/nargiz/Desktop/CRUD/src/main/java/ada/wm2/CRUD/repository/CourseRepository.java
+/Users/nargiz/Desktop/CRUD/src/main/java/ada/wm2/CRUD/config/MvcConfig.java
+/Users/nargiz/Desktop/CRUD/src/main/java/ada/wm2/CRUD/exception/GlobalExceptionHandler.java
+/Users/nargiz/Desktop/CRUD/src/main/java/ada/wm2/CRUD/exception/CourseException.java
+/Users/nargiz/Desktop/CRUD/src/main/java/ada/wm2/CRUD/entity/Student.java
+/Users/nargiz/Desktop/CRUD/src/main/java/ada/wm2/CRUD/entity/Course.java

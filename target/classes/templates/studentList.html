@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Info Page</title>
+
+    <style>
+            #customers {
+          font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+           font-size: 18px;
+        }
+
+        #customers td, #customers th {
+          border: 1px solid #ddd;
+          padding: 8px;
+        }
+
+        #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+
+        #customers th {
+          padding-top: 12px;
+          padding-bottom: 12px;
+          text-align: center;
+          background-color: #4CAF50;
+          color: white;
+        }
+        #message{
+            color: red;
+        }
+
+        table, th, td {
+          border: 1px solid black;
+        }
+
+        caption{
+            font-size: 33px;
+
+        }
+
+        .button {
+          background-color: #8c32a8;
+          border: none;
+          color: white;
+          padding: 5px 15px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          margin: 4px 2px;
+          cursor: pointer;
+           font-family: arial;
+            font-size: 15px;
+        }
+
+        a:link, a:visited {
+           background-color: white;
+            color: black;
+            border: 2px solid green;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-family: arial;
+        }
+
+        a:hover, a:active {
+            background-color: green;
+            color: white;
+            font-family: arial;
+        }
+
+
+        #home {
+          background-color: #4CAF50;
+          border: none;
+          color: white;
+          padding: 10px 30px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          margin: 4px 2px;
+          cursor: pointer;
+          font-family: arial;
+            font-size: 15px;
+        }
+
+
+        #update{
+        background-color: #32a8a2;
+          border: none;
+          color: white;
+          padding: 10px 30px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          margin: 4px 2px;
+          cursor: pointer;
+          font-family: arial;
+            font-size: 15px;
+
+        }
+
+        #delete{
+         background-color: #e81717;
+          border: none;
+          color: white;
+          padding: 10px 30px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          margin: 4px 2px;
+          cursor: pointer;
+          font-family: arial;
+            font-size: 15px;
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <center>
+
+        <p th:text="${findByMajorError}" id="message"/>
+        <table id="customers">
+            <caption>Students</caption>
+            <tr>
+                <th>ID</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Major</th>
+                <th>Courses</th>
+                <th>Update</th>
+                <th>Delete</th>
+
+            </tr>
+            <tr th:each="student:${students}" style="height:20px" align="center" valign="top">
+            <td th:text="${student.stId}"style="vertical-align:bottom">0</td>
+            <td th:text="${student.firstName}"style="vertical-align:bottom">0</td>
+            <td th:text="${student.lastName}"style="vertical-align:bottom">0</td>
+            <td th:text="${student.major}"style="vertical-align:bottom">0</td>
+            <td>
+                <select>
+                    <option th:each="course : ${student.courses}" th:text="${course.courseName}" th:value="${course.courseId}">
+                    </option>
+                </select>
+            </td>
+                <td>
+                    <form th:action="@{/app/student/update(id=${student.stId})}" th:method="GET">
+                        <input type="hidden" name="id" th:value="${student.stId}"/>
+                        <input type="submit" value="Update"  id="update">
+                    </form>
+                </td>
+                <td>
+                    <form th:action="@{/app/deleteStById(stId=${student.stId})}" th:method="GET">
+                        <input type="hidden" name="stId" th:value="${student.stId}"/>
+                        <input type="submit" value="Delete"  id="delete">
+                    </form>
+                </td>
+            </tr>
+
+        </table>
+        <br>
+
+
+        <p><b><a href="/app/new">Create New Student</a></b></p>
+
+        <p><b><a href="/app/student"> Go Back to Student Information Page</a></b></p>
+
+        <form action = "/" method = "GET">
+            <p><b><input type = "submit" value = "Go Back to Home Page" name = "submit" id="home"/></b></p>
+        </form>
+    </center>
+
+</body>
+</html>

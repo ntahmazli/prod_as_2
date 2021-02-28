@@ -1,0 +1,11 @@
+ada/wm2/CRUD/repository/StudentRepository.class
+ada/wm2/CRUD/exception/CourseException.class
+ada/wm2/CRUD/exception/GlobalExceptionHandler.class
+ada/wm2/CRUD/entity/Student.class
+ada/wm2/CRUD/controller/StudentController.class
+ada/wm2/CRUD/exception/StudentException.class
+ada/wm2/CRUD/config/VariablesConfig.class
+ada/wm2/CRUD/entity/Course.class
+ada/wm2/CRUD/CrudApplication.class
+ada/wm2/CRUD/repository/CourseRepository.class
+ada/wm2/CRUD/controller/CourseController.class

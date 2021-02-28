@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Student Page</title>
+
+    <style>
+        a:link, a:visited {
+           background-color: white;
+            color: black;
+            border: 2px solid green;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        #home {
+          background-color: #4CAF50;
+          border: none;
+          color: white;
+          padding: 10px 30px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          margin: 4px 2px;
+          cursor: pointer;
+          font-family: arial;
+          font-size: 15px;
+        }
+
+        a:hover, a:active {
+            background-color: green;
+            color: white;
+        }
+       body {
+            font-family: arial;
+            font-size: 15px;
+        }
+
+
+        #greetings{
+
+            font-family: arial;
+            font-size: 25px;
+            font-style: italic;
+
+        }
+
+        .successMessage{
+
+        color:green;
+
+        }
+        .failMessage{
+
+        color: red;
+
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+    <center>
+
+        <h1> Find All Student Information Here </h1>
+
+        <p th:text="${studentAdded}" class="successMessage"></p>
+        <p th:text="${studentUpdated}" class="successMessage"></p>
+        <p th:text="${deleteStudentSuccess}" class="successMessage"></p>
+
+        <p><b><a href="/app/new">Create New Student</a></b></p>
+
+        <p><b><a href="/app/studentList">View All Students</a></b></p>
+
+        <p><b><a href="/app/findStudent">Find a Student</a></b></p>
+
+        <form action = "/" method = "GET">
+            <p><b><input type = "submit" value = "Go Back to Home Page" name = "submit" id="home"/></b></p>
+        </form>
+    </center>
+
+</body>
+</html>

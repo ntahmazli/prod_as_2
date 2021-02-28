@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome To My Application</title>
+
+    <style>
+
+        .button {
+          background-color: #4CAF50;
+          border: none;
+          color: white;
+          padding: 10px 30px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          margin: 4px 2px;
+          cursor: pointer;
+          font-family: arial;
+            font-size: 15px;
+        }
+
+         div{
+
+
+                            top:0;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+
+                            margin: auto;
+                            height: 10em;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+
+                            width: 300px;
+                            height: 30px;
+                            padding: 20px;
+                            background-color: aliceblue;
+                            border: 2px solid black;
+
+
+         }
+
+         body {
+            background-color: #F5E2E4;
+            font-family: arial;
+            font-size: 15px;
+          }
+
+
+</style>
+
+</head>
+<body>
+<br>
+<div>
+    <h1> Welcome! </h1>
+</div>
+<br>
+<div>
+    <form action = "/app/studentList" method = "GET">
+        <input type = "submit" value = "Click Here for Student List" name = "submit" class = "button"/>
+
+    </form>
+</div>
+<br>
+<div>
+    <form action = "/app/courseList" method = "GET">
+        <input type = "submit" value = "Click Here for Course List" name = "submit" class = "button"/>
+    </form>
+</div>
+<br>
+<div>
+    <form action = "/app/student" method = "GET">
+        <input type = "submit" value = "Click Here for Student Information Page" name = "submit" class = "button"/>
+    </form>
+</div>
+<br>
+<div>
+    <form action = "/app/course" method = "GET">
+        <input type = "submit" value = "Click Here for Course Information Page" name = "submit" class = "button"/>
+    </form>
+</div>
+
+
+
+
+
+</body>
+</html>
